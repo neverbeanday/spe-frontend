@@ -70,7 +70,6 @@ function App() {
           : item
       );
 
-      // Recalculate the total
       const newTotal = updatedDataCar.reduce((acc, item) => acc + (item.subtotal || 0), 0);
       setTotal(newTotal);
 
@@ -106,10 +105,49 @@ function App() {
     })
   }
 
-  
+
+  const currentDate = new Date();
+  const options = {
+    month: 'long',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: 'numeric',
+    second: 'numeric',
+    hour12: false,
+  };
+
+  const day = currentDate.getDate();
+  const suffix = getDaySuffix(day);
+  const formattedDateString = currentDate.toLocaleString('en-US', options).replace(/\d{2}/, day + suffix).replace("at", " - ");
+
+function getDaySuffix(day) {
+  if (day >= 11 && day <= 13) {
+    return 'th';
+  }
+  const lastDigit = day % 10;
+  switch (lastDigit) {
+    case 1:
+      return 'st';
+    case 2:
+      return 'nd';
+    case 3:
+      return 'rd';
+    default:
+      return 'th';
+  }
+}
 
   return (
-      <Flex>
+      <Flex vertical justify='center' align='center' gap={'50px'}>
+        <div className='header-shop'>
+          <div className='header-shop-black-board'>
+            <Title level={1} className='project-name'>&lt; SPE / FRONTEND &gt;</Title>
+            <Title level={3} className='project-timestamp'>{formattedDateString}</Title>
+
+          </div>
+        </div>
+        <Title level={2}>SPE Frontend Shop</Title>
         <Table 
           className='table-content'
           columns={columns} 
