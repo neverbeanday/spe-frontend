@@ -84,7 +84,7 @@ function App() {
     return {
       product: item.product,
       quantity: item,
-      subtotal: (item.subtotal?.toString() || 0),
+      subtotal: (item.subtotal?.toLocaleString() || 0),
     }
   }) : null;
 
