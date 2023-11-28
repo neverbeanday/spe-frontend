@@ -1,0 +1,38 @@
+.table-content {
+  width: 100%;
+}
+
+.table-content .ant-table-thead th.ant-table-cell {
+  text-align: center;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+.table-content .ant-table-thead th.ant-table-cell::before {
+  display: none;
+}
+
+.ant-table-tbody .detail-product .product-code{
+  color: #00DBDE;
+}
+
+.ant-table-tbody .detail-product .product-name{
+  margin: 5px 0;
+}
+
+.ant-table-tbody .detail-product .product-price{
+  color: #6d6d6d;
+}
+
+.ant-table-tbody .detail-product .product-stock{
+  color: rgb(240, 31, 31);
+}
+
+.ant-table-wrapper .ant-table-footer {
+  background-color: #000000;
+}
+
+.ant-table-wrapper .ant-table-footer .ant-typography {
+  color: #ffffff;
+
+}
